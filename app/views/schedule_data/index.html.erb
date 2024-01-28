@@ -1,0 +1,29 @@
+<h3>予定一覧</h3>
+ 
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>タイトル</th>
+      <th>開始日</th>
+      <th>終了日</th>
+      <th>終日</th>
+      <th>更新日時</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @schedule_data.each do |schedule_datum| %>
+      <tr>
+        <td><%= schedule_datum.id %></td>
+        <td><%= schedule_datum.title %></td>
+        <td><%= schedule_datum.start_date %></td>
+        <td><%= schedule_datum.end_date %></td>
+        <td><%= schedule_datum.all_day_flg %></td>
+        <td><%= schedule_datum.updated_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p><%= link_to "新規追加", :new_schedule_datum %></p>
