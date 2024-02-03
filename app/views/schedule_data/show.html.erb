@@ -1,0 +1,36 @@
+<h3>予定詳細</h3>
+
+<table>
+  <tr>
+    <th>名前</th>
+    <td><%= @schedule_datum.title %></td>
+  </tr>
+  <tr>
+    <th>開始日</th>
+    <td><%= @schedule_datum.start_date.strftime("%F") %></td>
+  </tr>
+  <tr>
+    <th>終了日</th>
+    <td><%= @schedule_datum.end_date.strftime("%F") %></td>
+  </tr>
+  <tr>
+    <th>終日</th>
+    <td><%= @schedule_datum.all_day_flg_converter(@schedule_datum) %></td>
+  </tr>
+  <tr>
+    <th>スケジュールメモ</th>
+    <td><%= @schedule_datum.memo %></td>
+  </tr>
+</table>
+
+<div>
+  <ul>
+    <li><%= link_to "予定一覧に戻る", :schedule_data %></li>
+  </ul>
+</div>
+
+<div>
+  <ul>
+    <li><%= link_to "編集", [:edit, @schedule_datum] %></li>
+  </ul>
+</div>

@@ -21,10 +21,19 @@
       <tr>
         <td><%= schedule_datum.id %></td>
         <td><%= schedule_datum.title %></td>
-        <td><%= schedule_datum.start_date %></td>
-        <td><%= schedule_datum.end_date %></td>
-        <td><%= schedule_datum.all_day_flg %></td>
-        <td><%= schedule_datum.updated_at %></td>
+        <td><%= schedule_datum.start_date.strftime("%F") %></td>
+        <td><%= schedule_datum.end_date.strftime("%F") %></td>
+        <td><%= schedule_datum.all_day_flg_converter(schedule_datum) %></td>
+        <td><%= schedule_datum.updated_at.strftime("%F %R") %></td>
+        <td>
+          <%= link_to "詳細", schedule_datum %>
+        </td>
+        <td>
+          <%= link_to "編集", [:edit, schedule_datum] %>
+        </td>
+        <td>
+          <%= link_to "削除", schedule_datum, method: :delete, data: { confirm: "予定を削除しますか？" } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
