@@ -1,5 +1,5 @@
 <h3>予定一覧</h3>
- 
+
 <% if flash[:notice] %>
   <p class="notice"><%= flash[:notice] %></p>
 <% end %>
@@ -13,6 +13,9 @@
       <th>終了日</th>
       <th>終日</th>
       <th>更新日時</th>
+      <th>詳細</th>
+      <th>編集</th>
+      <th>削除</th>
     </tr>
   </thead>
 
@@ -38,5 +41,9 @@
     <% end %>
   </tbody>
 </table>
-
+<p>予定合計 <%= @schedule_data.count %> 件</p>
 <p><%= link_to "新規追加", :new_schedule_datum %></p>
+
+<footer>
+  <p>本日の日付 <%= Time.zone.today %></p>
+</footer>
