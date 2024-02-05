@@ -24,10 +24,10 @@
       <tr>
         <td><%= schedule_datum.id %></td>
         <td><%= schedule_datum.title %></td>
-        <td><%= schedule_datum.start_date.strftime("%F") %></td>
-        <td><%= schedule_datum.end_date.strftime("%F") %></td>
+        <td><%= schedule_datum.start_date.strftime("%Y/%m/%d") %></td>
+        <td><%= schedule_datum.end_date.strftime("%Y/%m/%d") %></td>
         <td><%= schedule_datum.all_day_flg_converter(schedule_datum) %></td>
-        <td><%= schedule_datum.updated_at.strftime("%F %R") %></td>
+        <td><%= schedule_datum.updated_at.strftime("%Y/%m/%d %R") %></td>
         <td>
           <%= link_to "詳細", schedule_datum %>
         </td>
